@@ -25,9 +25,9 @@ autocmd Vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " color theme
 colorscheme desert
 
-" number of spaces a tab counts for
+" number of spaces in a tab
 set tabstop=4
-
+set softtabstop=4
 " size of an "indent"
 set shiftwidth=4
 
@@ -39,9 +39,6 @@ set smarttab
 
 " highlight search
 set hlsearch
-
-" mute highlight when searching
-nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " enable incremental search highlighting
 set incsearch
@@ -122,10 +119,6 @@ nmap <Leader><Leader> V
 " toggle NERDTree visibility
 nmap  <Leader>e :NERDTreeToggle<CR>
 
-" enable normal regex matching
-nnoremap / /\v
-vnoremap / /\v
-
 " color column 85
 set colorcolumn=85
 
@@ -143,3 +136,6 @@ nnoremap <Leader>W <C-w>v<C-w>l
 
 " edit new files without saving old ones
 set hidden
+
+" mute highlight when searching
+nnoremap <silent> <C-l> :nohl<CR><C-l>
